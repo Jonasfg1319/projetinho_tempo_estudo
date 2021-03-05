@@ -1,0 +1,24 @@
+<section class="container">
+	<div class="center">		
+		<h1 class="display-1">Bora Estudar!!</h1>
+		<h4>Faça login para acessar</h4>
+		<form class="form p-3" action="/registro" method="post">
+	    <label>Nome</label>
+	    <input class="form-control" type="text" name="name">
+	    <label>Email</label>
+	    <input class="form-control" type="email" name="email">
+	    <label>Senha</label>
+	    <input class="form-control" type="password" name="pass">
+	    <input class="form-control btn btn-warning text-danger" type="submit" name="" value="Registrar">
+	    <a href="/registrar" class="text-primary">Não tem conta? crie uma agora mesmo</a>
+	    <?php if(isset($_GET['error'])){?>
+	    	   <?php if($_GET['error'] == "void"){?>
+               <p class="text-danger">preencha todos os campos</p>
+                <?php } ?>
+                <?php if($_GET['error'] == "user_not_found"){?>
+                 <p class="text-danger">nome e(ou) senha inválidos</p>
+                <?php } ?>
+	    <?php } ?>
+</form>
+	</div>
+</section>
