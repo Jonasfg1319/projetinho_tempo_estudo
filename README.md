@@ -13,5 +13,8 @@ Já logado, o usuário tem em seu perfil os dados de todas as horas estudadas de
 
 Ele tem a opção de começar a estudar, na página de estudos ele tem um cronometro para iniciar. Após terminar o tempo de estudo, terá um bloco para fazer anotações.
 
+![ap3](https://user-images.githubusercontent.com/24599447/126224849-1a529137-183d-493d-948f-2cac2c722767.png)
+
+
 Clicando em salvar, seu registro e data será salvo no sistema. Voltando para a página inicial, ele poderá conferir suas horas de estudo atualizadas 
 
