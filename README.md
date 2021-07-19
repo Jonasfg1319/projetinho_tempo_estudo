@@ -1,4 +1,4 @@
-![ap4](https://user-images.githubusercontent.com/24599447/126225270-67d4dbfb-bb46-4296-9718-a9ad41615921.png)
+
 # projetinho_tempo_estudo
 
 Um projeto pessoal para controlar o tempo de estudo diário 
