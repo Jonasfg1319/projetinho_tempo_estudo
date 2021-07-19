@@ -1,3 +1,4 @@
+![ap4](https://user-images.githubusercontent.com/24599447/126225270-67d4dbfb-bb46-4296-9718-a9ad41615921.png)
 # projetinho_tempo_estudo
 
 Um projeto pessoal para controlar o tempo de estudo diário 
@@ -18,3 +19,4 @@ Ele tem a opção de começar a estudar, na página de estudos ele tem um cronom
 
 Clicando em salvar, seu registro e data será salvo no sistema. Voltando para a página inicial, ele poderá conferir suas horas de estudo atualizadas 
 
+![ap4](https://user-images.githubusercontent.com/24599447/126225283-c8b23b40-4a81-4005-ac9c-bcb6e65fba05.png)
