@@ -8,6 +8,9 @@ Na tela inicial o usuário tem a opção de fazer login ou se cadastrar. Para au
 
 Já logado, o usuário tem em seu perfil os dados de todas as horas estudadas desde seu cadastro e em seu feed
 
+![ap2](https://user-images.githubusercontent.com/24599447/126224331-35056622-1d89-483d-860c-c042d248fcda.png)
+
+
 Ele tem a opção de começar a estudar, na página de estudos ele tem um cronometro para iniciar. Após terminar o tempo de estudo, terá um bloco para fazer anotações.
 
 Clicando em salvar, seu registro e data será salvo no sistema. Voltando para a página inicial, ele poderá conferir suas horas de estudo atualizadas 
