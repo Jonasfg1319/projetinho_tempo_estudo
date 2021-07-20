@@ -60,7 +60,7 @@ Aqui temos nossas classes de manipulação das tabelas do banco de dados, cada m
 
 O model Usuário contém os metódos de inserir(insert) e autenticar(authenticate) um usuário.
 
-O model Registro contém os metódo de inserir um novo registro de estudo.
+O model Registro contém o metódo de inserir um novo registro de estudo.
 
 O model Senha faz a tratativa usando bcrypt da senha cadastrada e verifica se a senha digitada no campo senha do login tem o mesmo hash da senha cadastrada no banco de dadoa.
 
