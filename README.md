@@ -58,9 +58,9 @@ Aqui temos os controladores da nossa aplicação, o arquivo IndexController cont
 
 Aqui temos nossas classes de manipulação das tabelas do banco de dados, cada model representa uma tabela. A função de cada model é fornecer as operações de banco de dados naquela determinada tabela. 
 
-No model Usuário contém os metódos de inserir(insert) e autenticar(authenticate) um usuário.
+O model Usuário contém os metódos de inserir(insert) e autenticar(authenticate) um usuário.
 
-No model Registro contém os metódo de inserir um novo registro de estudo.
+O model Registro contém os metódo de inserir um novo registro de estudo.
 
 O model Senha faz a tratativa usando bcrypt da senha cadastrada e verifica se a senha digitada no campo senha do login tem o mesmo hash da senha cadastrada no banco de dadoa.
 
