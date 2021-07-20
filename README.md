@@ -54,6 +54,8 @@ Faz a conexão com o banco de dados mysql usando PDO.
 
 Aqui temos os controladores da nossa aplicação, o arquivo IndexController controla a parte pública enquanto o arquivo AppController controla a parte onde apenas usuários autenticados tem acesso.
 
+Enquanto os controllers IndexController e AppController cuidam das operações de acordo com a visibilidade da aplicação, o controller Abstraction serve apenas para renderizar a view direcionada pelos outros controlladores.
+
 - Pasta App/Models
 
 Aqui temos nossas classes de manipulação das tabelas do banco de dados, cada model representa uma tabela. A função de cada model é fornecer as operações de banco de dados naquela determinada tabela. 
