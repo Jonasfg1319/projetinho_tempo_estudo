@@ -38,38 +38,38 @@ Foi usado o padrão MVC para construir esse projeto
 
 Pasta public
 
-Contém o arquivo Index.php que apenas direciona para o script Route.php dentro da pasta app. Há também as pastas css e js, onde temos os arquivos de front-end da nossa aplicação, midias e scripts para rodar no brownser
+Contém o arquivo Index.php que apenas direciona para o script Route.php dentro da pasta app. Há também as pastas css e js, onde temos os arquivos de front-end da nossa aplicação, midias e scripts para rodar no navegador.
 
 - Pasta App
 
 Route.php
 
-Inicia as rotas da nossa aplicação, direcionando para os controllers de acordo com a url da página
+Inicia as rotas da nossa aplicação, direcionando para os controllers de acordo com a url da página.
 
 Connection.php
 
-Faz a conexão com o banco de dados mysql usando PDO
+Faz a conexão com o banco de dados mysql usando PDO.
 
 - Pasta App/Controllers
 
-Aqui temos os controladores da nossa aplicação, o arquivo IndexController controla a parte pública enquanto o arquivo AppController controla a parte onde apenas usuários autenticados tem acesso
+Aqui temos os controladores da nossa aplicação, o arquivo IndexController controla a parte pública enquanto o arquivo AppController controla a parte onde apenas usuários autenticados tem acesso.
 
 - Pasta App/Models
 
 Aqui temos nossas classes de manipulação das tabelas do banco de dados, cada model representa uma tabela. A função de cada model é fornecer as operações de banco de dados naquela determinada tabela. 
 
-No model Usuário contém os metódos de inserir(insert) e autenticar(authenticate) um usuário
+No model Usuário contém os metódos de inserir(insert) e autenticar(authenticate) um usuário.
 
-No model Registro contém os metódo de inserir um novo registro de estudo
+No model Registro contém os metódo de inserir um novo registro de estudo.
 
-O model Senha faz a tratativa usando bcrypt da senha cadastrada e verifica se a senha digitada no campo senha do login tem o mesmo hash da senha cadastrada no banco de dadoa
+O model Senha faz a tratativa usando bcrypt da senha cadastrada e verifica se a senha digitada no campo senha do login tem o mesmo hash da senha cadastrada no banco de dadoa.
 
-O model Teste soma as horas estudadas no momento da finalização do estudo ás horas que já foram estudadas anteriormente, retornando assim o tempo total de horas estudadas desde a criação da conta do usuário
+O model Teste soma as horas estudadas no momento da finalização do estudo ás horas que já foram estudadas anteriormente, retornando assim o tempo total de horas estudadas desde a criação da conta do usuário.
 
 - Pasta App/Views
 
-Contém os arquivoss html com a parte visual da nossa aplicação
+Contém os arquivoss html com a parte visual da nossa aplicação.
 
-- Pastas e arquivos contidos no diretório principal do projeto
+- Pastas e arquivos contidos no diretório principal do projeto.
 
-Correspondem aos arquivos do gerenciador de pacotes composer, gerenciador que auxiliou no desenvolvimento da aplicação
+Correspondem aos arquivos do gerenciador de pacotes composer, gerenciador que auxiliou no desenvolvimento da aplicação.
