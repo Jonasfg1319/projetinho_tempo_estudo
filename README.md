@@ -38,7 +38,7 @@ Foi usado o padrão MVC para construir esse projeto
 
 Pasta public
 
-Contém o arquivo Index.php que apenas direciona para a pasta o script Route.php dentro da pasta app. Há também as pastas css e js, onde temos os arquivos de front-end da nossa aplicação, midias e scripts para rodar no brownser
+Contém o arquivo Index.php que apenas direciona para o script Route.php dentro da pasta app. Há também as pastas css e js, onde temos os arquivos de front-end da nossa aplicação, midias e scripts para rodar no brownser
 
 - Pasta App
 
