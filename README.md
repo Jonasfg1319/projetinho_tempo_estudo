@@ -40,7 +40,7 @@ Pasta public
 
 Contém o arquivo Index.php que apenas direciona para a pasta o script Route.php dentro da pasta app. Há também as pastas css e js, onde temos os arquivos de front-end da nossa aplicação, midias e scripts para rodar no brownser
 
-Pasta App
+- Pasta App
 
 Route.php
 
@@ -50,12 +50,26 @@ Connection.php
 
 Faz a conexão com o banco de dados mysql usando PDO
 
-Pasta App/Controllers
+- Pasta App/Controllers
 
 Aqui temos os controladores da nossa aplicação, o arquivo IndexController controla a parte pública enquanto o arquivo AppController controla a parte onde apenas usuários autenticados tem acesso
 
-Pasta App/Models
+- Pasta App/Models
 
-Pasta App/Views
+Aqui temos nossas classes de manipulação das tabelas do banco de dados, cada model representa uma tabela. A função de cada model é fornecer as operações de banco de dados naquela determinada tabela. 
 
-Contpem os arquivoss html com a parte visual da nossa aplicação
+No model Usuário contém os metódos de inserir(insert) e autenticar(authenticate) um usuário
+
+No model Registro contém os metódo de inserir um novo registro de estudo
+
+O model Senha faz a tratativa usando bcrypt da senha cadastrada e verifica se a senha digitada no campo senha do login tem o mesmo hash da senha cadastrada no banco de dadoa
+
+O model Teste soma as horas estudadas no momento da finalização do estudo ás horas que já foram estudadas anteriormente, retornando assim o tempo total de horas estudadas desde a criação da conta do usuário
+
+- Pasta App/Views
+
+Contém os arquivoss html com a parte visual da nossa aplicação
+
+- Pastas e arquivos contidos no diretório principal do projeto
+
+Correspondem aos arquivos do gerenciador de pacotes composer, gerenciador que auxiliou no desenvolvimento da aplicação
