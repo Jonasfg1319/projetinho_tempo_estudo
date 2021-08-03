@@ -77,6 +77,17 @@ class Route{
            "controller" => "AppController",
            "action" => "cadastra_registro"
      	 );
+        
+         $route['painel_usuario'] = array(
+           "route" => "/painel_usuario",
+           "controller" => "AppController",
+           "action" => "painel_usuario"
+       );
+         $route['nota'] = array(
+           "route" => "/nota",
+           "controller" => "AppController",
+           "action" => "nota"
+       );
 
         $route['fecha_sessao'] = array(
            "route" => "/fecha_sessao",

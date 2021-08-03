@@ -1,8 +1,26 @@
+<div class="menu" id="menu">
+	<div class="btn botao_menu" id="b_menu" onclick="manipula_nota()">
+		Suas notas
+	</div>
+	<ul class="list-group row" hidden="true" id="lista_notas">
+                       	 <?php foreach($this->notas as $key => $value){ $vu = $value['id_usuario']; $vr = $value['id_registro']?>
+                       	    <li class="list-group-item col-md-2 btn" onclick="pegar_nota('<?=$vu?>','<?=$vr?>')" style="color: red"> <?= $value['titulo'] ?></li>
+                       	    <?php }?>
+    </ul>
 
+</div>
+<div>
+
+</div>
+ 
+
+
+<div id="notes"></div>
 <div class="container">
 	<div class="center p-4">
 		<div class="text-center">
 			<h2 class="p-3" id="contador">00:00:00</h2>
+                 
 			<div class="row">
 				 <button class="btn btn-primary col-md-4" id="comecar" onclick="iniciar_cronometro()">Começar</button>
 				 <button class="btn btn-primary col-md-4" id="pausar" onclick="pause()">Pausar</button>
@@ -16,4 +34,27 @@
       	
       </form>
 
+     
+                      
+                      
+     
+     
+      <div>
+
+            <input class="form-control" type="text" name="titulo" placeholder="Titulo da Nota" id="titulo">
+      	    <button onclick="negrito()">Negrito</button>
+      	    <button onclick="expoente()">Expoente</button>
+      	<form>
+          
+            
+      		<textarea class="form-control" name="conteudo" id="documento" style="height: 600px" placeholder="Escrever suas notas">
+      			
+      		</textarea>
+      		<input type="submit" class="btn btn-success" name="salvar" value="Salvar">
+      	</form>
+            
+      </div>
+
 </div>
+
+

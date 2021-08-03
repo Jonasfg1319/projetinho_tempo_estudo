@@ -3,6 +3,9 @@ var contar
 var minutos = 0
 var segundos = 0
 var hora = 0
+var controla_negrito = false
+var mostra = false
+
 function finalizar(){
 	if(vz == 0){
 			let inp = document.createElement("input")
@@ -50,6 +53,53 @@ function iniciar_cronometro(){
       }
 	},1000)
 }
+}
+
+
+
+function pegar_nota(user,reg){
+    
+    event.preventDefault();
+    $.ajax({
+        data: XMLHttpRequest.responseText,
+        url: `/nota?reg=${reg}&us=${user}`,
+        type: "GET",
+        dataType: "html",
+        success: function(data){
+            //alert(data);   // retorna toda a página     
+            var xxx = $(data).filter("#nota");
+            var x2 = $(data).filter("#titulo");
+            document.getElementById("documento").innerHTML = xxx.html()
+            document.getElementById("titulo").value = x2.html()
+                 
+        },
+        error: function(){
+            alert("Problema ao carregar a solicitação via Ajax.");
+        }
+    });
+
+
+
+ }
+
+function negrito(){
+    if(controla_negrito == false){
+	document.getElementById("documento").style.fontWeight = "bold"
+    controla_negrito = true
+   }else{
+   	document.getElementById("documento").style.fontWeight = ""
+   	 controla_negrito = false
+   }
+} 
+
+function manipula_nota(){
+    if(mostra == false){
+      document.getElementById("lista_notas").hidden = false
+      mostra = true   
+    }else{
+    	document.getElementById("lista_notas").hidden = true
+    	mostra = false 
+    }
 }
 
 function pause(){

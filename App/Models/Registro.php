@@ -64,4 +64,12 @@ class Registro extends Connection{
 
 
     }
+
+    public function user_logado($id){
+      $query = "SELECT r.horas_totais,r.minutos_totais,r.segundos_totais,r.anotacoes,r.horas_atuais,r.data, n.titulo FROM registros as r LEFT JOIN notas as n on (r.id = n.id_registro)";
+       $stmt = $this->conn->prepare($query);
+       $stmt->execute();
+       return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
 }

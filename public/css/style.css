@@ -5,3 +5,13 @@ a{
 a:hover{
 	color: black;
 }
+
+.menu{
+	position: fixed;
+
+}
+
+.botao_menu{
+	background-color: purple;
+	color: white;
+}

@@ -5,6 +5,7 @@ use App\Controllers\Abstration;
 use App\Models\Registro;
 //use App\Models\Tempo;
 use App\Models\Teste;
+use App\Models\Nota;
 
 class AppController extends Abstraction{
 
@@ -15,10 +16,24 @@ class AppController extends Abstraction{
    }
 
    public function estudar(){
+        error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+      $this->ligar_sessao();
+      $nt = new Nota();
+      $notas = $nt->recupera_notas_user($_SESSION['id']);
+      $this->notas = $notas;
       $this->render("estudar");
    }
 
+   public function nota(){
+      $this->ligar_sessao();
+      $nt = new Nota();
+      $notas = $nt->recupera_nt($_SESSION['id'],$_GET['reg']);
+      $this->notas = $notas;
+      $this->render("nota");
+   }
+
    public function cadastra_registro(){
+
       session_start();
       $registro = new Registro();
      
@@ -47,6 +62,20 @@ class AppController extends Abstraction{
      
    }
 
+   public function painel_usuario(){
+       error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+       session_start();
+       $reg = new Registro();
+       $nt = new Nota();
+       $registros = $reg->user_logado($_SESSION['id']);
+       $notas = $nt->recupera_notas_user($_SESSION['id']);
+       $this->registros = $registros;
+       $this->notas = $notas;
+       $this->render("painel_usuario");
+   }
+  public function ligar_sessao(){
+    session_start();
+  }
 
    public function fecha_sessao(){
        session_start();

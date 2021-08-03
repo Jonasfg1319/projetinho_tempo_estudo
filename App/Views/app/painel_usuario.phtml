@@ -1,0 +1,33 @@
+
+<div class="container p-3">
+	<a href="/estudar" class="btn btn-danger">Estudar Agora!!</a>
+	<div class="row">
+		<div class="col-md-4">
+			<div>
+				FOTO PERFIL
+			</div>
+			<div>
+				Nome
+			</div>
+			<div>
+				Horas estudadas na semana:
+			</div>
+			<div>
+				Horas estudadas no mês
+			</div>
+		</div>
+		<div class="col-md-8">
+			<?php foreach($this->registros as $key => $value){?>
+			<div class="col-md-12 p-3">
+				<?= $value["data"] ?>
+				<h6>Anotações: <?= $value["anotacoes"] ?></h6>
+				<h5>Tempo estudado: <?= $value["horas_atuais"] ?></h5>
+				<a href="" class="btn btn-primary"><?= $value['titulo']?></a>
+			</div>
+		<?php }?>
+		</div>
+			
+		</div>
+
+	</div>
+</div>

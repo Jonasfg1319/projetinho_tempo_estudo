@@ -9,7 +9,7 @@ abstract class Connection{
 		try{
 
 			$conn = new \PDO(
-				"mysql:host=localhost;dbname=registro_estudo;charset=utf8",
+				"mysql:host=localhost;dbname=r2;charset=utf8",
 				"root",
 				"" 
 			);
