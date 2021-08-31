@@ -5,8 +5,8 @@ namespace App\Controllers;
 use App\Controllers\Abstration;
 use App\Models\Registro;
 use App\Models\Usuario;
-use App\Models\Teste;
-use App\Models\Senha;
+use App\Controllers\Tempo;
+use App\Controllers\Senha;
 
 class IndexController extends Abstraction{
      
@@ -33,7 +33,6 @@ class IndexController extends Abstraction{
         if($_POST['name'] != " " || $_POST['pass'] != " "){
             $user = new Usuario();
             $user->__set("nome",$_POST['name']);
-            //$user->__set("senha",$senha);
             $t = $user->require_user();
             $t = $t['senha'];
             $senha = new Senha();
@@ -52,7 +51,7 @@ class IndexController extends Abstraction{
                $reg->__set("id_usuario",$_SESSION['id']);
                $consulta = $reg->consultaPersonalizada();
                
-               $tempo = new Teste($consulta['horas_totais'],$consulta['minutos_totais'],$consulta['segundos_totais']);
+               $tempo = new Tempo($consulta['horas_totais'],$consulta['minutos_totais'],$consulta['segundos_totais']);
                $tempo = $tempo->imprimeTempo();
                
                $_SESSION['total_hora'] = $tempo;

@@ -1,8 +1,8 @@
 <?php 
-namespace App\Models;
-use App\Connection;
+namespace App\Controllers;
 
-class Teste {
+
+class Tempo {
     
   private $horas;
   private $minutos;

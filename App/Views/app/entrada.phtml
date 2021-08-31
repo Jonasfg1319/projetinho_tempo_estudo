@@ -1,13 +1,14 @@
+<?php print_r($this->parametro); ?>
 <div class=" text-center p-3">
 <a class="btn btn-dark" href="/estudar">Estudar Agora!!</a>
 </div>
-<?php foreach($this->parametro as $key => $value){?>
+<?php foreach($this->parametro as $tempo){?>
    <section class="container p-3">
    	  <div class="center">
-   	  	 <h5><?= $value['nome']?> Registro: </h5>
-   	  	 <p>Estudou <?= $value['horas_atuais']?> na data <?= $value['data'] ?></p>
-   	  	 <p>Horas totais estudadas de <?= $value['nome']?>: <?= $value['horas_totais'] ?></p>
-   	  	 <p class="text-danger">Obs: <?= $value['anotacoes'] ?></p>
+   	  	 <h5><?= $tempo['nome']?> Registro: </h5>
+   	  	 <p>Estudou <?= $tempo['horas_atuais']?> na data <?= $tempo['data'] ?></p>
+   	  	 <p>Horas totais estudadas de <?= $tempo['nome']?>: <?= $tempo['horas_totais'] ?></p>
+   	  	 <p class="text-danger">Obs: <?= $tempo['anotacoes'] ?></p>
    	  </div>
    </section>
 <?php } ?>

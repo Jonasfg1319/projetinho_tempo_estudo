@@ -3,8 +3,7 @@ namespace App\Controllers;
 
 use App\Controllers\Abstration;
 use App\Models\Registro;
-//use App\Models\Tempo;
-use App\Models\Teste;
+use App\Controllers\Tempo;
 use App\Models\Nota;
 
 class AppController extends Abstraction{
@@ -12,6 +11,8 @@ class AppController extends Abstraction{
    public function entrada(){
        $registro = new Registro();
        $this->parametro = $registro->listarRegistros();
+       $tam_registros = count($this->parametro);
+       $this->parametro[$tam_registros-1]["horas_totais"] = $this->parametro[0]["horas_totais"].": ".$this->parametro[0]["minutos_totais"]." : ".$this->parametro[0]["segundos_totais"];
        $this->render("entrada");
    }
 
@@ -47,7 +48,7 @@ class AppController extends Abstraction{
       $minutos = substr($_POST['horas'],4, 2);
       $horas = substr($_POST['horas'],0,2);
 
-      $testar = new Teste($horas,$minutos,$segundos);
+      $testar = new Tempo($horas,$minutos,$segundos);
       $testar->calculaTempo($tempo);
      
       $registro->atualizaTempo($testar->__get("horas"),$testar->__get("minutos"),$testar->__get("segundos"));
