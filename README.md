@@ -32,10 +32,11 @@ Após baixar a pasta do projeto, é necessário setar o banco de dados da sua ma
 
 Rode 
 
-´´´
+```
 php -S localhost:8080
 
-´´´
+```
+
 
 # Tecnologias usadas
 
