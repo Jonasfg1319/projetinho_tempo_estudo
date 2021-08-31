@@ -23,6 +23,20 @@ Clicando em salvar, seu registro e data será salvo no sistema. Voltando para a 
 
 ![ap4](https://user-images.githubusercontent.com/24599447/126225283-c8b23b40-4a81-4005-ac9c-bcb6e65fba05.png)
 
+
+# Como rodar?
+
+Após baixar a pasta do projeto, é necessário setar o banco de dados da sua maquina local no arquivo Connection.php que está localizado no diretório app
+
+É necessário criar as tabelas correspondentes aos models da aplicação como Registro e Usuario, feito isso, abra o terminal e vá navegue até a pasta public do projeto.
+
+Rode 
+
+´´´
+php -S localhost:8080
+
+´´´
+
 # Tecnologias usadas
 
 - Php 7
