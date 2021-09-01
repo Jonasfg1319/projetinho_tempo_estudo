@@ -19,7 +19,7 @@ Ele tem a opção de começar a estudar, na página de estudos ele tem um cronom
 ![ap3](https://user-images.githubusercontent.com/24599447/126224849-1a529137-183d-493d-948f-2cac2c722767.png)
 
 
-Clicando em salvar, seu registro e data será salvo no sistema. Voltando para a página inicial, ele poderá conferir suas horas de estudo atualizadas 
+Clicando em salvar, seu registro e data será salvo no sistema. Voltando para a página inicial, você poderá conferir suas horas de estudo atualizadas. O app é publico, então você pode ver os registros de todos os usuários na timeline.
 
 ![ap4](https://user-images.githubusercontent.com/24599447/126225283-c8b23b40-4a81-4005-ac9c-bcb6e65fba05.png)
 
@@ -70,6 +70,11 @@ Aqui temos os controladores da nossa aplicação, o arquivo IndexController cont
 
 Enquanto os controllers IndexController e AppController cuidam das operações de acordo com a visibilidade da aplicação, o controller Abstraction serve apenas para renderizar a view direcionada pelos outros controladores.
 
+A classe Senha faz a tratativa usando bcrypt da senha cadastrada e verifica se a senha digitada no campo senha do login tem o mesmo hash da senha cadastrada no banco de dadoa.
+
+A classe Tempo soma as horas estudadas no momento da finalização do estudo ás horas que já foram estudadas anteriormente, retornando assim o tempo total de horas estudadas desde a criação da conta do usuário.
+
+
 - Pasta App/Models
 
 Aqui temos nossas classes de manipulação das tabelas do banco de dados, cada model representa uma tabela. A função de cada model é fornecer as operações de banco de dados naquela determinada tabela. 
@@ -77,10 +82,6 @@ Aqui temos nossas classes de manipulação das tabelas do banco de dados, cada m
 O model Usuário contém os metódos de inserir(insert) e autenticar(authenticate) um usuário.
 
 O model Registro contém o metódo de inserir um novo registro de estudo.
-
-O model Senha faz a tratativa usando bcrypt da senha cadastrada e verifica se a senha digitada no campo senha do login tem o mesmo hash da senha cadastrada no banco de dadoa.
-
-O model Teste soma as horas estudadas no momento da finalização do estudo ás horas que já foram estudadas anteriormente, retornando assim o tempo total de horas estudadas desde a criação da conta do usuário.
 
 - Pasta App/Views
 
