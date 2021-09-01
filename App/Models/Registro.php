@@ -38,11 +38,14 @@ class Registro extends Connection{
     }
 
     public function novoRegistro(){
-       $query = "INSERT INTO registros(id_usuario,horas_atuais,anotacoes) Values(?,?,?)";
+       $query = "INSERT INTO registros(id_usuario,horas_atuais, horas_totais, minutos_totais, segundos_totais, anotacoes) Values(?,?,?,?,?,?)";
        $stmt = $this->conn->prepare($query);
        $stmt->bindValue(1,$this->__get("id_usuario"));
        $stmt->bindValue(2,$this->__get("horas_atuais"));
-       $stmt->bindValue(3,$this->__get("anotacoes"));
+       $stmt->bindValue(3,$this->__get("horas_totais"));
+       $stmt->bindValue(4,$this->__get("minutos_totais"));
+       $stmt->bindValue(5,$this->__get("segundos_totais"));
+       $stmt->bindValue(6,$this->__get("anotacoes"));
        $stmt->execute();
     }
 
@@ -71,5 +74,14 @@ class Registro extends Connection{
        $stmt->execute();
        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
+    }
+
+    public function tempo_total_registro($id){
+
+       $query = "SELECT r.id_usuario,r.horas_atuais,r.data,r.horas_totais,u.nome, r.anotacoes, r.minutos_totais, r.segundos_totais FROM registros as r LEFT JOIN usuarios as u on (r.id_usuario = u.id) where r.id_usuario = $id";
+      $stmt = $this->conn->prepare($query);
+      $stmt->execute();
+
+      return $stmt->fetchAll(\PDO::FETCH_ASSOC);   
     }
 }
