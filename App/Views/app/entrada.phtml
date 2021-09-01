@@ -1,13 +1,14 @@
+<?php print_r($_SESSION) ?>
 <div class=" text-center p-3">
 <a class="btn btn-dark" href="/estudar">Estudar Agora!!</a>
 </div>
-<?php foreach($this->parametro as $tempo){?>
+<?php foreach($this->parametro as $registro){?>
    <section class="container p-3">
    	  <div class="center">
-   	  	 <h5><?= $tempo['nome']?> Registro: </h5>
-   	  	 <p>Estudou <?= $tempo['horas_atuais']?> na data <?= $tempo['data'] ?></p>
-   	  	 <p>Horas totais estudadas de <?= $tempo['nome']?>: <?= $tempo['horas_totais'] ?></p>
-   	  	 <p class="text-danger">Obs: <?= $tempo['anotacoes'] ?></p>
+   	  	 <h5><?= $registro['nome']?> Registro: </h5>
+   	  	 <p>Estudou <?= $registro['horas_atuais']?> na data <?= $registro['data'] ?></p>
+   	  	 <p>Horas totais estudadas de <?= $registro['nome']?>: <?= $registro['horas_totais'] ?> : <?= $registro['minutos_totais'] ?> : <?= $registro['segundos_totais'] ?></p>
+   	  	 <p class="text-danger">Obs: <?= $registro['anotacoes'] ?></p>
    	  </div>
    </section>
 <?php } ?>

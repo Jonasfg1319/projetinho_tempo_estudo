@@ -12,7 +12,6 @@ class AppController extends Abstraction{
        $registro = new Registro();
        $this->parametro = $registro->listarRegistros();
        $tam_registros = count($this->parametro);
-       $this->parametro[$tam_registros-1]["horas_totais"] = $this->parametro[0]["horas_totais"].": ".$this->parametro[0]["minutos_totais"]." : ".$this->parametro[0]["segundos_totais"];
        $this->render("entrada");
    }
 
