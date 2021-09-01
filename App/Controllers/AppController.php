@@ -11,8 +11,6 @@ class AppController extends Abstraction{
    public function entrada(){
        $registro = new Registro();
        $this->parametro = $registro->listarRegistros();
-       $this->parametro = $this->organiza_tempo($this->parametro);
-       $tam_registros = count($this->parametro);
        $this->render("entrada");
    }
 
@@ -79,29 +77,6 @@ class AppController extends Abstraction{
    }
 
 
-  function organiza_tempo($registros){
-  
-    $registro = new Registro();
-    foreach($registros as $key => $r){
-
-         $registro_usuario = $registro->tempo_total_registro($r["id_usuario"]);
-         
-         $r["horas_totais"] = 0;
-         $r["minutos_totais"] = 0;
-         $r["segundos_totais"] = 0;
-
-         foreach($registro_usuario as $r2){
-             
-             $r["horas_totais"] += $r2["horas_totais"];
-             $r["minutos_totais"] = $r2["minutos_totais"];
-             $r["segundos_totais"] = $r2["segundos_totais"];
-         }
-
-    }
-
-    return $registros;
-
-  }
 
   public function ligar_sessao(){
     session_start();
