@@ -58,7 +58,7 @@ abstract class Connection{
 
 É necessário criar as tabelas correspondentes aos models da aplicação como Registro e Usuario
 
-Neste projeto, não está sendo usado migrations então rode no seu banco de dados os comandos:
+Neste projeto não está sendo usado migrations, então, rode no seu banco de dados as querys a seguir:
 
 ```
 create table usuarios(
