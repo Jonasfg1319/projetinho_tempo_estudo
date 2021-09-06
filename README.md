@@ -56,7 +56,21 @@ abstract class Connection{
 }
 ```
 
-É necessário criar as tabelas correspondentes aos models da aplicação como Registro e Usuario, feito isso, abra o terminal e vá navegue até a pasta public do projeto.
+É necessário criar as tabelas correspondentes aos models da aplicação como Registro e Usuario
+
+Neste projeto, não está sendo usado migrations então rode no seu banco de dados os comandos:
+
+```
+create table usuarios(
+  id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(250) NOT NULL,
+  email varchar(250) NOT NULL,
+  senha varchar(250) NOT NULL,
+);
+
+```
+
+feito isso, abra o terminal e vá navegue até a pasta public do projeto.
 
 Rode 
 
