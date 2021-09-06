@@ -70,7 +70,7 @@ create table usuarios(
 
 ```
 
-feito isso, abra o terminal e vá navegue até a pasta public do projeto.
+feito isso, abra o terminal e navegue até a pasta public do projeto.
 
 Rode 
 
