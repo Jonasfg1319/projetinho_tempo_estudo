@@ -68,6 +68,18 @@ create table usuarios(
   senha varchar(250) NOT NULL,
 );
 
+
+create table registros(
+   id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   id_usuario int NOT NULL,
+   horas_atuais varchar(250) NOT NULL,
+   data timestamp NOT NULL,
+   horas_totais int NOT NULL,
+   minutos_totais int NOT NULL,
+   segundos_totais int NOT NULL,
+   FOREIGN KEY id_usuario RERERENCES usuarios(id)
+);
+
 ```
 
 feito isso, abra o terminal e navegue até a pasta public do projeto.
