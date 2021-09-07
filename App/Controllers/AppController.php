@@ -15,6 +15,7 @@ class AppController extends Abstraction{
           $pag = $_GET['pag'];
        }
        $this->parametro = $registro->listarRegistros($pag);
+       $this->tot = $registro->totRegistrosDb();
        $this->render("entrada");
    }
 
