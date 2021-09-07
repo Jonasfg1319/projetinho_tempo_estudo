@@ -49,7 +49,6 @@ class AppController extends Abstraction{
       $testar = new Tempo($horas,$minutos,$segundos);
       $testar->calculaTempo($tempo);
      
-     
       $registro->__set("horas_totais", $testar->__get("horas"));
       $registro->__set("minutos_totais", $testar->__get("minutos"));
       $registro->__set("segundos_totais", $testar->__get("segundos"));

@@ -32,11 +32,11 @@ class Tempo {
       $this->segundos += intval($tempo['segundos_totais']);
         
 
-       if($this->segundos % 60 + $this->segundos > 60 ){
+       if(($this->segundos % 60) > 60 ){
            $this->minutos += 1;
        }
 
-       if($this->horas % 60 + $this->horas > 60 ){
+       if(($this->horas % 60) > 60 ){
            $this->horas += 1;
        }
      

@@ -37,7 +37,7 @@ class Nota extends Connection{
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 	}
 
-    public function recupera_nota_registro($id,$reg){
+    public function recupera_nota_registro(){
 		$query = "SELECT conteudo,titulo FROM notas WHERE id_usuario = ? and id_registro = ?";
 		$stmt = $this->conn->prepare($query);
 		$stmt->bindValue(1, $this->__get('id_usuario'));
@@ -49,7 +49,7 @@ class Nota extends Connection{
 
 	public function cadastra_nota(){
       
-       
+
 	}
 
 }
