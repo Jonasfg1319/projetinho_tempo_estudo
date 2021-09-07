@@ -5,6 +5,7 @@ var segundos = 0
 var hora = 0
 var controla_negrito = false
 var mostra = false
+var cronometro_iniciado = false
 
 function finalizar(){
 	if(vz == 0){
@@ -35,7 +36,8 @@ function finalizar(){
 }
 
 function iniciar_cronometro(){
-	if (vz == 0) {
+	if (vz == 0 && cronometro_iniciado == false) {
+    cronometro_iniciado = true
 	contar = setInterval(function(){
 		printsegundos = segundos<10?"0"+segundos:segundos
     	printminutos = minutos<10?"0"+minutos:minutos
@@ -52,7 +54,11 @@ function iniciar_cronometro(){
     	}
       }
 	},1000)
+
+
 }
+
+
 }
 
 
@@ -104,6 +110,7 @@ function manipula_nota(){
 
 function pause(){
 	clearInterval(contar)
+    cronometro_iniciado = false
 }
 
 
