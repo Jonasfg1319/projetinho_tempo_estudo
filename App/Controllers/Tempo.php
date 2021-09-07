@@ -27,9 +27,9 @@ class Tempo {
  
   public function calculaTempo($tempo){
   
-      $this->horas += intval($tempo['horas_totais']);
-      $this->minutos += intval($tempo['minutos_totais']);
-      $this->segundos += intval($tempo['segundos_totais']);
+      $this->horas += $tempo['horas_totais'];
+      $this->minutos += $tempo['minutos_totais'];
+      $this->segundos += $tempo['segundos_totais'];
         
 
        if(($this->segundos % 60) > 60 ){
@@ -41,7 +41,7 @@ class Tempo {
        }
      
        if($this->minutos > 59){
-         if($this->horas == intval($tempo['horas_totais'])){
+         if($this->horas == $tempo['horas_totais']){
             $this->horas += 1;
         }
         $this->minutos = $this->minutos % 60;
@@ -49,7 +49,7 @@ class Tempo {
 
       
       if($this->segundos > 59){
-        if($this->minutos == intval($tempo['minutos_totais'])){
+        if($this->minutos == $tempo['minutos_totais']){
             $this->minutos += 1;
         }
            
