@@ -61,7 +61,7 @@ class AppController extends Abstraction{
               
       $_SESSION["total_hora"] = $testar->imprimeTempo(); 
       
-     //header("Location: /");
+     header("Location: /");
       
 
      
