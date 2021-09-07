@@ -87,6 +87,8 @@ create table registros(
    CONSTRAINT FOREIGN KEY (id_usuario) RERERENCES usuarios(id)
 );
 
+//esta tabela é opcional, o sistema de notas ainda não foi implementado
+
 CREATE TABLE notas(
     id int not null PRIMARY KEY, 
     id_usuario int not null,
