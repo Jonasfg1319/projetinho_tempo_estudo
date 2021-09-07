@@ -118,3 +118,10 @@ function zerartudo(){
 	
 	
 }
+
+
+function salvar_nota(){
+    event.preventDefault()
+    
+    alert('Hello')
+}
