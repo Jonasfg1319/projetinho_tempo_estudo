@@ -28,7 +28,61 @@ Clicando em salvar, seu registro e data será salvo no sistema. Voltando para a 
 
 Após baixar a pasta do projeto, é necessário setar o banco de dados da sua maquina local no arquivo Connection.php que está localizado no diretório app
 
-É necessário criar as tabelas correspondentes aos models da aplicação como Registro e Usuario, feito isso, abra o terminal e vá navegue até a pasta public do projeto.
+Neste projeto, foi usado o banco de dados Mysql
+
+```
+<?php 
+
+namespace App;
+
+abstract class Connection{
+
+	public function getConnection(){
+
+		try{
+
+			$conn = new \PDO(
+				"mysql:host=SEU_HOST;dbname=NOME_DE_SEU_BANCO_DADOS;charset=utf8",
+				"SEU_USUARIO",
+				"SUA_SENHA_DE_USUARIO" 
+			);
+
+			return $conn;
+
+		}catch(\PDOException $e){
+           echo "Erro: ". $e->getMessage();
+		}
+	}
+}
+```
+
+É necessário criar as tabelas correspondentes aos models da aplicação como Registro e Usuario
+
+Neste projeto não está sendo usado migrations, então, rode no seu banco de dados as querys a seguir:
+
+```
+create table usuarios(
+  id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(250) NOT NULL,
+  email varchar(250) NOT NULL,
+  senha varchar(250) NOT NULL,
+);
+
+
+create table registros(
+   id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   id_usuario int NOT NULL,
+   horas_atuais varchar(250) NOT NULL,
+   data timestamp NOT NULL,
+   horas_totais int NOT NULL,
+   minutos_totais int NOT NULL,
+   segundos_totais int NOT NULL,
+   FOREIGN KEY id_usuario RERERENCES usuarios(id)
+);
+
+```
+
+feito isso, abra o terminal e navegue até a pasta public do projeto.
 
 Rode 
 
