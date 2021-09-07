@@ -8,7 +8,6 @@ class Nota extends Connection{
 	private $conn = null;
 	private $id = null;
 	private $id_usuario = null;
-	private $id_registro = null;
     private $titulo = null;
     private $conteudo = null;
 
@@ -31,7 +30,7 @@ class Nota extends Connection{
     }
 
 	public function recupera_notas_user(){
-		$query = "SELECT titulo,conteudo,id_usuario,id_registro FROM notas WHERE id_usuario = ?";
+		$query = "SELECT titulo,conteudo,id_usuario FROM notas WHERE id_usuario = ?";
 		$stmt = $this->conn->prepare($query);
 		$stmt->bindValue(1, $this->__get('id_usuario'));
 		$stmt->execute();
@@ -39,24 +38,14 @@ class Nota extends Connection{
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 	}
 
-    public function recupera_nota_registro(){
-		$query = "SELECT conteudo,titulo FROM notas WHERE id_usuario = ? and id_registro = ?";
-		$stmt = $this->conn->prepare($query);
-		$stmt->bindValue(1, $this->__get('id_usuario'));
-		$stmt->bindValue(2, $this->__get('id_registro'));
-		$stmt->execute();
-
-		return $stmt->fetch(\PDO::FETCH_ASSOC);
-	}
 
 	public function cadastra_nota(){
       
-        $query = "INSERT INTO notas(id_usuario, id_registro, titulo,conteudo) VALUES(?,?,?,?)";
+        $query = "INSERT INTO notas(id_usuario, titulo,conteudo) VALUES(?,?,?)";
         $stmt = $this->conn->prepare($query);
         $stmt->bindValue(1, $this->__get('id_usuario'));
-	    $stmt->bindValue(2, $this->__get('id_registro'));
-	    $stmt->bindValue(3, $this->__get('titulo'));
-	    $stmt->bindValue(4, $this->__get('conteudo'));
+	    $stmt->bindValue(2, $this->__get('titulo'));
+	    $stmt->bindValue(3, $this->__get('conteudo'));
 	    $stmt->execute();
 
         

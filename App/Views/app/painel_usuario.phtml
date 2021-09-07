@@ -16,18 +16,21 @@
 				Horas estudadas no mês
 			</div>
 		</div>
+       
+         
+          
+		
 		<div class="col-md-8">
-			<?php foreach($this->registros as $key => $value){?>
+			<h4>Suas notas</h4>
+			<?php foreach($this->notas as $key => $value){?>
 			<div class="col-md-12 p-3">
 				<?= $value["data"] ?>
-				<h6>Anotações: <?= $value["anotacoes"] ?></h6>
-				<h5>Tempo estudado: <?= $value["horas_atuais"] ?></h5>
-				<a href="" class="btn btn-primary"><?= $value['titulo']?></a>
+				<h6> <a href="">Ver Nota: <?= $value["titulo"] ?> </a></h6>
 			</div>
 		<?php }?>
 		</div>
 			
-		</div>
+	
 
 	</div>
 </div>

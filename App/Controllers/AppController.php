@@ -31,7 +31,7 @@ class AppController extends Abstraction{
    public function nota(){
       $this->ligar_sessao();
       $nt = new Nota();
-      $notas = $nt->recupera_nt($_SESSION['id'],$_GET['reg']);
+      $notas = $nt->recupera_nt();
       $this->notas = $notas;
       $this->render("nota");
    }
@@ -65,7 +65,12 @@ class AppController extends Abstraction{
     
               
       $_SESSION["total_hora"] = $testar->imprimeTempo(); 
+      if(!empty($_POST['titulo']) && !empty($_POST['conteudo'])){
+         
+         $this->cadastra_nota($_POST['titulo'], $_POST['conteudo']);  
+      }
       
+
      header("Location: /");
       
 
@@ -73,19 +78,26 @@ class AppController extends Abstraction{
    }
 
 
-   public function cadastra_nota(){
- 
+   public function cadastra_nota($titulo, $conteudo){
+        
+        $this->ligar_sessao();
+        $nota = new Nota();
 
-         //code
+        $nota->__set("id_usuario", $_SESSION['id']);
+        $nota->__set("titulo", $titulo);
+        $nota->__set("conteudo", $conteudo);
+        
+        $nota->cadastra_nota(); 
    }
 
    public function painel_usuario(){
        error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
        session_start();
        $reg = new Registro();
-       $nt = new Nota();
+       $nota = new Nota();
        $registros = $reg->user_logado($_SESSION['id']);
-       $notas = $nt->recupera_notas_user($_SESSION['id']);
+       $nota->__set("id_usuario",$_SESSION['id']);
+       $notas = $nota->recupera_notas_user();
        $this->registros = $registros;
        $this->notas = $notas;
        $this->render("painel_usuario");
