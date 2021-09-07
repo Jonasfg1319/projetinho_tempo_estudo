@@ -17,7 +17,7 @@ class TestCase{
 		$time = new Tempo("00","01","52");
 		$time->calculaTempo($tempo);
          
-        $esperado = "00:03:55"; 
+                $esperado = "00:03:55"; 
 
 		if($time->imprimeTempo() == $esperado){
 		
