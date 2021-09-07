@@ -6,6 +6,7 @@ var hora = 0
 var controla_negrito = false
 var mostra = false
 var cronometro_iniciado = false
+var editor_notas = false
 
 function finalizar(){
 	if(vz == 0){
@@ -123,6 +124,31 @@ function zerartudo(){
 
 function renderiza_editor_de_notas(){
     //code
+    if(editor_notas == false){
+        
+        titulo = document.createElement("input")
+        titulo.name = "titulo"
+        titulo.className = "form-control"
+
+        label_titulo = document.createElement('label')
+        label_titulo.innerHTML = "Titulo"
+
+        label_conteudo = document.createElement('label')
+        label_conteudo.innerHTML = "Conteudo"
+
+        conteudo = document.createElement('textarea')
+        conteudo.name = "conteudo"
+        conteudo.className = "conteudo-notas form-control p-1"
+        notas_div = document.getElementById('notas')
+      
+        
+        notas_div.appendChild(label_titulo)
+        notas_div.appendChild(titulo)
+        notas_div.appendChild(label_conteudo)
+        notas_div.appendChild(conteudo)
+
+        editor_notas = true
+   }
 }
 
 

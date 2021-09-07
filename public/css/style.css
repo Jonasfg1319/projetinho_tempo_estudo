@@ -15,3 +15,14 @@ a:hover{
 	background-color: purple;
 	color: white;
 }
+
+.botao-escrever-nota{
+   background-color: purple;
+   color: white;
+   border-radius: 250px;
+}
+
+.conteudo-notas{
+	border: 2px solid black;
+
+}
