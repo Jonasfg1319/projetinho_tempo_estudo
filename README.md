@@ -26,6 +26,14 @@ Clicando em salvar, seu registro e data será salvo no sistema. Voltando para a 
 
 # Como rodar?
 
+É necessário ter instalado na sua máquina 
+
+```
+Php 7 ou superior
+composer
+
+```
+
 Após baixar a pasta do projeto, é necessário setar o banco de dados da sua maquina local no arquivo Connection.php que está localizado no diretório app
 
 Neste projeto, foi usado o banco de dados Mysql
