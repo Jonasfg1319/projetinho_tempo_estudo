@@ -84,8 +84,18 @@ create table registros(
    horas_totais int NOT NULL,
    minutos_totais int NOT NULL,
    segundos_totais int NOT NULL,
-   FOREIGN KEY id_usuario RERERENCES usuarios(id)
+   CONSTRAINT FOREIGN KEY (id_usuario) RERERENCES usuarios(id)
 );
+
+CREATE TABLE notas(
+    id int not null PRIMARY KEY, 
+    id_usuario int not null,
+    id_registro int not null,
+    titulo varchar(250) not null,
+    conteudo text not null,
+    CONSTRAINT FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+    CONSTRAINT FOREIGN KEY (id_registro) REFERENCES registros(id)
+)
 
 ```
 
