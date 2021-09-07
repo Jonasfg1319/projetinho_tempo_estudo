@@ -67,6 +67,13 @@ class AppController extends Abstraction{
      
    }
 
+
+   public function cadastra_nota(){
+ 
+
+         //code
+   }
+
    public function painel_usuario(){
        error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
        session_start();

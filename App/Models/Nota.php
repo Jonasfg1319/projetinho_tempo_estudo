@@ -9,6 +9,8 @@ class Nota extends Connection{
 	private $id = null;
 	private $id_usuario = null;
 	private $id_registro = null;
+    private $titulo = null;
+    private $conteudo = null;
 
     public function __construct(){
 
@@ -49,7 +51,15 @@ class Nota extends Connection{
 
 	public function cadastra_nota(){
       
+        $query = "INSERT INTO notas(id_usuario, id_registro, titulo,conteudo) VALUES(?,?,?,?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(1, $this->__get('id_usuario'));
+	    $stmt->bindValue(2, $this->__get('id_registro'));
+	    $stmt->bindValue(3, $this->__get('titulo'));
+	    $stmt->bindValue(4, $this->__get('conteudo'));
+	    $stmt->execute();
 
+        
 	}
 
 }

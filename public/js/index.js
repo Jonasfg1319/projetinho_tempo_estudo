@@ -122,6 +122,22 @@ function zerartudo(){
 
 function salvar_nota(){
     event.preventDefault()
-    
-    alert('Hello')
+
+    let dados = $("formulario_nota").serialize()
+     
+     $.ajax({
+        url: "/cadastra_nota",
+        type: "post",
+        data: dados,
+        dataType: "text",
+        success: () => {
+          alert("Foi")
+         
+        },
+        error : () => {
+          alert("Erro")
+        }
+     
+  })
+
 }

@@ -95,6 +95,13 @@ class Route{
            "action" => "fecha_sessao"
      	 );
 
+       
+        $route['cadastra_nota'] = array(
+           "route" => "/cadastra_nota",
+           "controller" => "AppController",
+           "action" => "cadastra_nota"
+       );
+
         $this->setRoutes($route);
 
      }

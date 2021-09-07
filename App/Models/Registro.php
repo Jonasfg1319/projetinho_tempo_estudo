@@ -30,7 +30,7 @@ class Registro extends Connection{
     }
 
     public function listarRegistros(){
-      $query = "SELECT r.id_usuario,r.horas_atuais,r.data,r.horas_totais,u.nome, r.anotacoes, r.minutos_totais, r.segundos_totais FROM registros as r LEFT JOIN usuarios as u on (r.id_usuario = u.id)";
+      $query = "SELECT r.id_usuario,r.horas_atuais,r.data,r.horas_totais,u.nome, r.anotacoes, r.minutos_totais, r.segundos_totais FROM registros as r LEFT JOIN usuarios as u on (r.id_usuario = u.id) order by r.data desc";
       $stmt = $this->conn->prepare($query);
       $stmt->execute();
 
