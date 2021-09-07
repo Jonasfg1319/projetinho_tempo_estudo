@@ -21,11 +21,11 @@ class TestCase{
 
 		if($time->imprimeTempo() == $esperado){
 		
-			return "pass";
+		     return "pass";
 		
 		}else{
           
-          	return "failed";
+          	     return "failed";
 		}
 
     }
