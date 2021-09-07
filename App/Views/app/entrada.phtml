@@ -10,12 +10,12 @@
 </div>
 <div class="text-center">
  <?php $_GET['pag'] = !isset($_GET['pag']) ? 1 : $_GET['pag']; ?>
- <?php if(($this->tot['tot'] - ($_GET['pag'] * 10)) > 10){ ?>
+ <?php if(($this->tot['tot'] - ($_GET['pag'] * 10)) > 0){ ?>
       <a class="text-dark text-right container" href="/entrada?pag=<?=$proxima_pag?>">
           Próxima página
       </a>
    <?php } ?>
-   Total de registros: <?= $this->tot['tot'] ?>
+   Total de registros: <?= ($_GET['pag'] * 10) ?>
 </div>
 
 
