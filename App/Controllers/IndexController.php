@@ -51,7 +51,12 @@ class IndexController extends Abstraction{
                $reg->__set("id_usuario",$_SESSION['id']);
                $consulta = $reg->consultaPersonalizada();
                
-               $tempo = new Tempo($consulta['horas_totais'],$consulta['minutos_totais'],$consulta['segundos_totais']);
+               $tempo = new Tempo(
+                $consulta[count($consulta)-1]['horas_totais'],
+                $consulta[count($consulta)-1]['minutos_totais'],
+                $consulta[count($consulta)-1]['segundos_totais']
+              );
+              
                $tempo = $tempo->imprimeTempo();
                
                $_SESSION['total_hora'] = $tempo;

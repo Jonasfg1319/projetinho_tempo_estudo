@@ -63,7 +63,7 @@ class Registro extends Connection{
       $stmt = $this->conn->prepare($query);
       $stmt->bindValue(1,$this->__get("id_usuario"));
       $stmt->execute();
-      return $stmt->fetch(\PDO::FETCH_ASSOC);
+      return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 
     }
