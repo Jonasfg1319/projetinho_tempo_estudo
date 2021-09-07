@@ -33,20 +33,12 @@
       <form id="formulario" action="/cadastra_registro" method="post">
       	
       </form>
-      <div>
+      <button class="btn btn-warning text-light" onclick="renderiza_editor_de_notas()">
+         Fazer Anotação
+      </button>
 
-            <input class="form-control" type="text" name="titulo" placeholder="Titulo da Nota" id="titulo">
-      	    <button onclick="negrito()">Negrito</button>
-      	    <button onclick="expoente()">Expoente</button>
-      	<form>
-          
-            
-      		<textarea class="form-control" name="conteudo" id="documento" style="height: 600px" placeholder="Escrever suas notas">
-      			
-      		</textarea>
-      		<input type="submit" onclick="salvar_nota()" class="btn btn-success" name="salvar" value="Salvar">
-      	</form>
-            
+      <div id="notas">
+        
       </div>
 
 </div>

@@ -120,6 +120,12 @@ function zerartudo(){
 }
 
 
+
+function renderiza_editor_de_notas(){
+    //code
+}
+
+
 function salvar_nota(){
     event.preventDefault()
 
