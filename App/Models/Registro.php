@@ -29,8 +29,13 @@ class Registro extends Connection{
     	$this->$attr = $value;
     }
 
-    public function listarRegistros(){
-      $query = "SELECT r.id_usuario,r.horas_atuais,r.data,r.horas_totais,u.nome, r.anotacoes, r.minutos_totais, r.segundos_totais FROM registros as r LEFT JOIN usuarios as u on (r.id_usuario = u.id) order by r.data desc";
+    public function listarRegistros($pag){
+      $limit = 10;
+      $offset = 1;
+      if($pag > 1){
+          $offset = $pag * $limit;
+      }
+      $query = "SELECT r.id_usuario,r.horas_atuais,r.data,r.horas_totais,u.nome, r.anotacoes, r.minutos_totais, r.segundos_totais FROM registros as r LEFT JOIN usuarios as u on (r.id_usuario = u.id) order by r.data desc limit $limit offset $offset";
       $stmt = $this->conn->prepare($query);
       $stmt->execute();
 
@@ -69,7 +74,7 @@ class Registro extends Connection{
     }
 
     public function user_logado($id){
-      $query = "SELECT r.horas_totais,r.minutos_totais,r.segundos_totais,r.anotacoes,r.horas_atuais,r.data, n.titulo FROM registros as r LEFT JOIN notas as n on (r.id = n.id_registro)";
+      $query = "SELECT r.horas_totais,r.minutos_totais,r.segundos_totais,r.anotacoes,r.horas_atuais,r.data, n.titulo FROM registros as r LEFT JOIN notas as n on (r.id = n.id_registro) where r.id_usuario = $id";
        $stmt = $this->conn->prepare($query);
        $stmt->execute();
        return $stmt->fetchAll(\PDO::FETCH_ASSOC);

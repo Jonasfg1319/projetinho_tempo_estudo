@@ -10,7 +10,11 @@ class AppController extends Abstraction{
 
    public function entrada(){
        $registro = new Registro();
-       $this->parametro = $registro->listarRegistros();
+       $pag = 1;
+       if(isset($_GET['pag'])){
+          $pag = $_GET['pag'];
+       }
+       $this->parametro = $registro->listarRegistros($pag);
        $this->render("entrada");
    }
 
