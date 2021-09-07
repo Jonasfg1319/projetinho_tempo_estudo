@@ -87,18 +87,6 @@ create table registros(
    CONSTRAINT FOREIGN KEY (id_usuario) RERERENCES usuarios(id)
 );
 
-//A tabela notas é opcional, o sistema de notas ainda não foi implementado
-
-CREATE TABLE notas(
-    id int not null PRIMARY KEY, 
-    id_usuario int not null,
-    id_registro int not null,
-    titulo varchar(250) not null,
-    conteudo text not null,
-    CONSTRAINT FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
-    CONSTRAINT FOREIGN KEY (id_registro) REFERENCES registros(id)
-)
-
 ```
 
 feito isso, abra o terminal e navegue até a pasta public do projeto.
