@@ -46,12 +46,12 @@ class AppController extends Abstraction{
       $minutos = substr($_POST['horas'],4, 2);
       $horas = substr($_POST['horas'],0,2);
       echo "$horas: $minutos: $segundos <br>";
-      echo $tempo[count($consulta)-1]['horas_totais'] .
-      ":". $tempo[count($consulta)-1]['minutos_totais'] .
-      ":". $tempo[count($consulta)-1]['segundos_totais'];
-      
+      echo $tempo[count($tempo)-1]['horas_totais'] .
+      ":". $tempo[count($tempo)-1]['minutos_totais'] .
+      ":". $tempo[count($tempo)-1]['segundos_totais'];
+
       $testar = new Tempo($horas,$minutos,$segundos);
-      $testar->calculaTempo($tempo[count($consulta)-1]);
+      $testar->calculaTempo($tempo[count($tempo)-1]);
      
       $registro->__set("horas_totais", $testar->__get("horas"));
       $registro->__set("minutos_totais", $testar->__get("minutos"));
@@ -61,7 +61,7 @@ class AppController extends Abstraction{
               
       $_SESSION["total_hora"] = $testar->imprimeTempo(); 
       
-     header("Location: /");
+     //header("Location: /");
       
 
      
