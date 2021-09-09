@@ -68,11 +68,13 @@ abstract class Connection{
 Neste projeto não está sendo usado migrations, então, rode no seu banco de dados as querys a seguir:
 
 ```
+create database tempo_estudo;
+
 CREATE TABLE usuarios(
   id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nome varchar(250) NOT NULL,
   email varchar(250) NOT NULL,
-  senha varchar(250) NOT NULL,
+  senha varchar(250) NOT NULL
 );
 
 
@@ -84,7 +86,7 @@ CREATE TABLE registros(
    horas_totais int NOT NULL,
    minutos_totais int NOT NULL,
    segundos_totais int NOT NULL,
-   CONSTRAINT FOREIGN KEY (id_usuario) RERERENCES usuarios(id)
+   CONSTRAINT FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 
@@ -95,6 +97,8 @@ CREATE TABLE notas(
     conteudo text not null,
     CONSTRAINT FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
  )
+
+
 
 ```
 
